@@ -34,14 +34,18 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkAI7 = new System.Windows.Forms.CheckBox();
+            this.chkAI6 = new System.Windows.Forms.CheckBox();
+            this.chkAI5 = new System.Windows.Forms.CheckBox();
+            this.chkAI4 = new System.Windows.Forms.CheckBox();
             this.chkAI3 = new System.Windows.Forms.CheckBox();
             this.chkAI2 = new System.Windows.Forms.CheckBox();
             this.chkAI1 = new System.Windows.Forms.CheckBox();
             this.chkAI0 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTimeToZero = new System.Windows.Forms.TextBox();
             this.chkReverseDirection = new System.Windows.Forms.CheckBox();
+            this.txtTimeToZero = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -61,12 +65,13 @@
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(51, 20);
             this.txtInterval.TabIndex = 1;
-            this.txtInterval.Text = "0.330";
+            this.txtInterval.Text = "0";
             // 
             // btnRun
             // 
+            this.btnRun.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRun.Image = global::ljmonitor.Properties.Resources.media_playback_start;
-            this.btnRun.Location = new System.Drawing.Point(61, 167);
+            this.btnRun.Location = new System.Drawing.Point(61, 108);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 23);
             this.btnRun.TabIndex = 2;
@@ -77,27 +82,70 @@
             // 
             // fdSave
             // 
-            this.fdSave.Filter = "CSV Files|*.csv|All Files|*.*";
+            this.fdSave.Filter = "CSV Files|*.csv|TXT Files|*.txt|All Files|*.*";
             this.fdSave.OverwritePrompt = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.chkAI7);
+            this.groupBox1.Controls.Add(this.chkAI6);
+            this.groupBox1.Controls.Add(this.chkAI5);
+            this.groupBox1.Controls.Add(this.chkAI4);
             this.groupBox1.Controls.Add(this.chkAI3);
             this.groupBox1.Controls.Add(this.chkAI2);
             this.groupBox1.Controls.Add(this.chkAI1);
             this.groupBox1.Controls.Add(this.chkAI0);
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 47);
+            this.groupBox1.Size = new System.Drawing.Size(173, 64);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Analog Inputs";
             // 
+            // chkAI7
+            // 
+            this.chkAI7.AutoSize = true;
+            this.chkAI7.Location = new System.Drawing.Point(123, 41);
+            this.chkAI7.Name = "chkAI7";
+            this.chkAI7.Size = new System.Drawing.Size(32, 17);
+            this.chkAI7.TabIndex = 7;
+            this.chkAI7.Text = "7";
+            this.chkAI7.UseVisualStyleBackColor = true;
+            // 
+            // chkAI6
+            // 
+            this.chkAI6.AutoSize = true;
+            this.chkAI6.Location = new System.Drawing.Point(85, 41);
+            this.chkAI6.Name = "chkAI6";
+            this.chkAI6.Size = new System.Drawing.Size(32, 17);
+            this.chkAI6.TabIndex = 6;
+            this.chkAI6.Text = "6";
+            this.chkAI6.UseVisualStyleBackColor = true;
+            // 
+            // chkAI5
+            // 
+            this.chkAI5.AutoSize = true;
+            this.chkAI5.Location = new System.Drawing.Point(47, 41);
+            this.chkAI5.Name = "chkAI5";
+            this.chkAI5.Size = new System.Drawing.Size(32, 17);
+            this.chkAI5.TabIndex = 5;
+            this.chkAI5.Text = "5";
+            this.chkAI5.UseVisualStyleBackColor = true;
+            // 
+            // chkAI4
+            // 
+            this.chkAI4.AutoSize = true;
+            this.chkAI4.Location = new System.Drawing.Point(9, 41);
+            this.chkAI4.Name = "chkAI4";
+            this.chkAI4.Size = new System.Drawing.Size(32, 17);
+            this.chkAI4.TabIndex = 4;
+            this.chkAI4.Text = "4";
+            this.chkAI4.UseVisualStyleBackColor = true;
+            // 
             // chkAI3
             // 
             this.chkAI3.AutoSize = true;
-            this.chkAI3.Checked = true;
-            this.chkAI3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAI3.Location = new System.Drawing.Point(123, 19);
             this.chkAI3.Name = "chkAI3";
             this.chkAI3.Size = new System.Drawing.Size(32, 17);
@@ -108,8 +156,6 @@
             // chkAI2
             // 
             this.chkAI2.AutoSize = true;
-            this.chkAI2.Checked = true;
-            this.chkAI2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAI2.Location = new System.Drawing.Point(85, 19);
             this.chkAI2.Name = "chkAI2";
             this.chkAI2.Size = new System.Drawing.Size(32, 17);
@@ -146,29 +192,13 @@
             this.groupBox2.Controls.Add(this.chkReverseDirection);
             this.groupBox2.Controls.Add(this.txtTimeToZero);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 91);
+            this.groupBox2.Location = new System.Drawing.Point(12, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(173, 70);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Direction";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Time to zero:                       s";
-            // 
-            // txtTimeToZero
-            // 
-            this.txtTimeToZero.Location = new System.Drawing.Point(75, 22);
-            this.txtTimeToZero.Name = "txtTimeToZero";
-            this.txtTimeToZero.Size = new System.Drawing.Size(55, 20);
-            this.txtTimeToZero.TabIndex = 1;
-            this.txtTimeToZero.Text = "0.2";
+            this.groupBox2.Visible = false;
             // 
             // chkReverseDirection
             // 
@@ -180,14 +210,31 @@
             this.chkReverseDirection.Text = "Reverse Direction";
             this.chkReverseDirection.UseVisualStyleBackColor = true;
             // 
+            // txtTimeToZero
+            // 
+            this.txtTimeToZero.Location = new System.Drawing.Point(75, 22);
+            this.txtTimeToZero.Name = "txtTimeToZero";
+            this.txtTimeToZero.Size = new System.Drawing.Size(55, 20);
+            this.txtTimeToZero.TabIndex = 1;
+            this.txtTimeToZero.Text = "0.2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Time to zero:                       s";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(197, 199);
+            this.ClientSize = new System.Drawing.Size(197, 138);
+            this.Controls.Add(this.btnRun);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnRun);
             this.Controls.Add(this.txtInterval);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -222,6 +269,10 @@
         private System.Windows.Forms.CheckBox chkReverseDirection;
         private System.Windows.Forms.TextBox txtTimeToZero;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkAI7;
+        private System.Windows.Forms.CheckBox chkAI6;
+        private System.Windows.Forms.CheckBox chkAI5;
+        private System.Windows.Forms.CheckBox chkAI4;
     }
 }
 
